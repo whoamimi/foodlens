@@ -13,6 +13,7 @@
     },
     "android": {
       "newArchEnabled": true,
+      "enableHermes": true,
       "adaptiveIcon": {
         "backgroundColor": "#2e7d32",
         "foregroundImage": "./assets/images/main-icon.png"
