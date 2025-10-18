@@ -94,16 +94,18 @@ export const resetUsageCount = (): void => {
 };
 
 export const hasReachedUsageLimit = (): boolean => {
-  const isLoggedIn = getIsLoggedIn();
-  if (isLoggedIn) return false;
+  // If user has their own API key, no limit
+  const hasApiKey = !!getApiKey();
+  if (hasApiKey) return false;
 
   const count = getUsageCount();
   return count >= 2;
 };
 
 export const getRemainingScans = (): number => {
-  const isLoggedIn = getIsLoggedIn();
-  if (isLoggedIn) return Infinity;
+  // If user has their own API key, unlimited scans
+  const hasApiKey = !!getApiKey();
+  if (hasApiKey) return Infinity;
 
   const count = getUsageCount();
   return Math.max(0, 2 - count);
