@@ -1,33 +1,39 @@
-# í½½ï¸ FoodLens AI - Smart Food Nutrition Analyzer
+# FoodLens
 
-An AI-powered mobile app that analyzes food images and provides instant nutrition insights using Google Gemini AI. Built with React Native, Expo, and TailwindCSS.
+> AI-powered mobile app for instant food nutrition analysis
 
-## âœ¨ Features
+An intelligent food analyzer that uses Google Gemini AI to provide comprehensive nutrition insights from photos, gallery images, or text input. Built with React Native and Expo.
 
-- í³· **Camera Integration** - Take photos of your food instantly
-- í¶¼ï¸ **Gallery Upload** - Select existing photos from your device
-- âœï¸ **Text Input** - Enter food names manually for analysis
-- í´– **Gemini AI Powered** - Advanced food recognition and nutrition analysis
-- í³Š **Detailed Nutrition Facts** - Calories, protein, fat, carbs, sugar, fiber
-- í²¯ **Health Score** - Get a 0-100 health rating for any food
-- í²¡ **AI Insights** - Personalized health recommendations
-- í¼± **Healthier Alternatives** - Suggestions for better food choices
-- í¾¨ **Beautiful UI** - Modern gradient design with TailwindCSS
+---
 
-## íº€ Quick Start
+## Features
 
-### Prerequisites
+- ğŸ“¸ **Camera Integration** - Capture food photos instantly
+- ğŸ–¼ï¸ **Gallery Upload** - Analyze existing photos
+- âœï¸ **Text Input** - Search by food name
+- ğŸ¤– **AI-Powered** - Google Gemini AI recognition
+- ğŸ“Š **Nutrition Facts** - Detailed breakdown of calories, macros, and micronutrients
+- ğŸ’¯ **Health Score** - 0-100 rating system
+- ğŸ’¡ **Smart Insights** - Personalized health recommendations
+- ğŸ”„ **Alternatives** - Healthier food suggestions
+- ğŸ¨ **Modern UI** - Clean interface with TailwindCSS
 
-- Node.js (v16 or higher)
-- npm or yarn
-- Expo Go app (for mobile testing)
-- Google Gemini API key ([Get it here](https://ai.google.dev))
+---
 
-### Installation
+## Prerequisites
 
-1. **Navigate to the project directory**
+- [Node.js](https://nodejs.org/) (v16+)
+- [Expo Go](https://expo.dev/client) app on your mobile device
+- [Google Gemini API Key](https://ai.google.dev/)
+
+---
+
+## Installation
+
+1. **Clone the repository**
 
    ```bash
+   git clone https://github.com/tejasnasre/foodlens.git
    cd foodlens
    ```
 
@@ -43,83 +49,148 @@ An AI-powered mobile app that analyzes food images and provides instant nutritio
    npm start
    ```
 
-4. **Run on your device**
-   - Scan the QR code with Expo Go (Android) or Camera app (iOS)
-   - Or press \`a\` for Android emulator, \`i\` for iOS simulator
-
-### First Time Setup
-
-1. Launch the app
-2. Enter your **Google Gemini API key** when prompted
-3. Start analyzing food! í¾‰
-
-## í´‘ Getting Your Gemini API Key
-
-1. Visit [Google AI Studio](https://ai.google.dev)
-2. Sign in with your Google account
-3. Click "Get API Key"
-4. Create a new API key
-5. Copy and paste it into the app
-
-**Note:** Your API key is stored securely on your device and never shared.
-
-## í³± How to Use
-
-### Option 1: Take a Photo
-1. Tap the **"í³· Take Photo"** button
-2. Grant camera permissions
-3. Capture your food
-4. Wait for AI analysis
-
-### Option 2: Upload from Gallery
-1. Tap the **"í¶¼ï¸ Gallery"** button
-2. Select a food image
-3. Wait for AI analysis
-
-### Option 3: Enter Food Name
-1. Type the food name (e.g., "Chicken Biryani")
-2. Tap **"Analyze"**
-3. Get instant nutrition facts
-
-## í¾¯ Health Score System
-
-- **71-100** âœ… **Healthy** - Great choice! Rich in nutrients, low in harmful components
-- **41-70** âš ï¸ **Moderate** - Okay in moderation, watch portion sizes
-- **0-40** âŒ **Unhealthy** - High in calories/sugar/fat, consider alternatives
-
-## í» ï¸ Development
-
-### Available Scripts
-
-```bash
-npm start          # Start Expo development server
-npm run android    # Run on Android
-npm run ios        # Run on iOS
-npm run web        # Run on web
-npm run lint       # Run ESLint
-```
-
-## í´’ Privacy & Security
-
-- API keys are stored locally on your device
-- No data is sent to external servers except Google Gemini
-- Images are processed securely and not stored
-
-## í°› Troubleshooting
-
-### "Failed to analyze food"
-- Check your internet connection
-- Verify your API key is valid
-- Ensure the image is clear and contains food
-
-### Camera not working
-- Grant camera permissions in device settings
-- Restart the app
-
-### API key issues
-- Get a new key from [Google AI Studio](https://ai.google.dev)
-- Make sure you copied the entire key
+4. **Run the app**
+   - Scan the QR code with **Expo Go** (Android) or **Camera** app (iOS)
+   - Or press `a` for Android emulator / `i` for iOS simulator
 
 ---
 
-**Built with â¤ï¸ using Google Gemini AI** í´–
+## Getting Started
+
+### 1. Get Your API Key
+
+1. Visit [Google AI Studio](https://ai.google.dev/)
+2. Sign in with your Google account
+3. Create a new API key
+4. Copy the key for app configuration
+
+### 2. Configure the App
+
+On first launch, you'll be prompted to enter your Gemini API key. The key is stored securely on your device.
+
+### 3. Analyze Food
+
+Choose one of three methods:
+
+**ğŸ“· Camera**
+
+- Tap "Take Photo"
+- Grant camera permissions
+- Capture your food
+- View instant results
+
+**ğŸ–¼ï¸ Gallery**
+
+- Tap "Gallery"
+- Select a food image
+- Wait for AI analysis
+
+**âŒ¨ï¸ Text Input**
+
+- Type the food name
+- Tap "Analyze"
+- Get nutrition facts
+
+---
+
+## Health Score System
+
+| Score  | Status       | Description                                       |
+| ------ | ------------ | ------------------------------------------------- |
+| 71-100 | âœ… Healthy   | Rich in nutrients, low in harmful components      |
+| 41-70  | âš ï¸ Moderate  | Okay in moderation, watch portion sizes           |
+| 0-40   | âŒ Unhealthy | High in calories/sugar/fat, consider alternatives |
+
+---
+
+## Tech Stack
+
+- **Framework:** React Native with Expo
+- **Language:** TypeScript
+- **Styling:** TailwindCSS (NativeWind)
+- **AI:** Google Gemini AI
+- **Navigation:** Expo Router
+- **Storage:** React Native MMKV
+- **Image Handling:** Expo Image Picker & Camera
+
+---
+
+## Project Structure
+
+```
+foodlens/
+â”œâ”€â”€ app/                    # App screens (Expo Router)
+â”‚   â”œâ”€â”€ index.tsx          # Home screen
+â”‚   â”œâ”€â”€ history.tsx        # Analysis history
+â”‚   â”œâ”€â”€ settings.tsx       # App settings
+â”‚   â””â”€â”€ _layout.tsx        # Root layout
+â”œâ”€â”€ components/            # Reusable components
+â”œâ”€â”€ services/              # API services (Gemini AI)
+â”œâ”€â”€ utils/                 # Helper functions
+â”œâ”€â”€ types/                 # TypeScript types
+â”œâ”€â”€ config/                # App configuration
+â””â”€â”€ assets/                # Images and static files
+```
+
+---
+
+## Available Scripts
+
+```bash
+npm start          # Start Expo development server
+npm run android    # Run on Android device/emulator
+npm run ios        # Run on iOS device/simulator
+npm run web        # Run on web browser
+npm run lint       # Run ESLint checks
+```
+
+---
+
+## Troubleshooting
+
+### Failed to Analyze Food
+
+- âœ“ Check internet connection
+- âœ“ Verify API key is valid
+- âœ“ Ensure image is clear and contains food
+
+### Camera Issues
+
+- âœ“ Grant camera permissions in device settings
+- âœ“ Restart the app
+- âœ“ Check device camera functionality
+
+### API Key Errors
+
+- âœ“ Get a new key from [Google AI Studio](https://ai.google.dev/)
+- âœ“ Ensure the entire key is copied correctly
+- âœ“ Check for extra spaces or characters
+
+---
+
+## Privacy & Security
+
+- ğŸ”’ API keys stored locally on device
+- ğŸš« No external servers except Google Gemini
+- ğŸ–¼ï¸ Images processed securely and not stored
+- ğŸ“± All data remains on your device
+
+---
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details
+
+---
+
+## Author
+
+**Tejas Nasre**
+
+- GitHub: [@tejasnasre](https://github.com/tejasnasre)
+
+---
+
+## Acknowledgments
+
+Built with [Google Gemini AI](https://ai.google.dev/) âœ¨
