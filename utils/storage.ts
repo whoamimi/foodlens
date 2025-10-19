@@ -1,67 +1,78 @@
 /**
- * Storage Service using MMKV
+ * Storage Service using AsyncStorage
  * Handles local storage for app usage tracking and scan history
  */
 
-import { Platform } from "react-native";
-import { MMKV } from "react-native-mmkv";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-// Provide a simple in-memory fallback that mimics the MMKV interface
-class MemoryStorage {
-  private store = new Map<string, string | number | boolean>();
+// Storage wrapper to provide synchronous-like interface with AsyncStorage
+class StorageWrapper {
+  private cache = new Map<string, string | number | boolean>();
+  private initialized = false;
+
+  async init() {
+    if (this.initialized) return;
+    try {
+      const keys = await AsyncStorage.getAllKeys();
+      const items = await AsyncStorage.multiGet(keys);
+      items.forEach(([key, value]) => {
+        if (value !== null) {
+          try {
+            const parsed = JSON.parse(value);
+            this.cache.set(key, parsed);
+          } catch {
+            this.cache.set(key, value);
+          }
+        }
+      });
+      this.initialized = true;
+    } catch (error) {
+      console.error("❌ Error initializing AsyncStorage:", error);
+    }
+  }
 
   set(key: string, value: string | number | boolean) {
-    this.store.set(key, value);
+    this.cache.set(key, value);
+    AsyncStorage.setItem(key, JSON.stringify(value)).catch((error) => {
+      console.error(`Error saving ${key}:`, error);
+    });
   }
-  getString(key: string) {
-    const v = this.store.get(key);
+
+  getString(key: string): string | undefined {
+    const v = this.cache.get(key);
     return typeof v === "string" ? v : undefined;
   }
-  getNumber(key: string) {
-    const v = this.store.get(key);
+
+  getNumber(key: string): number | undefined {
+    const v = this.cache.get(key);
     return typeof v === "number" ? v : undefined;
   }
-  getBoolean(key: string) {
-    const v = this.store.get(key);
+
+  getBoolean(key: string): boolean | undefined {
+    const v = this.cache.get(key);
     return typeof v === "boolean" ? v : undefined;
   }
+
   delete(key: string) {
-    this.store.delete(key);
+    this.cache.delete(key);
+    AsyncStorage.removeItem(key).catch((error) => {
+      console.error(`Error deleting ${key}:`, error);
+    });
   }
+
   clearAll() {
-    this.store.clear();
+    this.cache.clear();
+    AsyncStorage.clear().catch((error) => {
+      console.error("Error clearing storage:", error);
+    });
   }
 }
 
-// Initialize storage with safe fallback for web/old-arch/dev-client-mismatch
-export const storage = (() => {
-  // MMKV is not supported on web; also guard for environments without TurboModules
-  if (Platform.OS === "web") {
-    return new MemoryStorage();
-  }
-  try {
-    const mmkvInstance = new MMKV({
-      id: "foodlens-storage",
-      encryptionKey: "foodlens-secure-key-2024",
-    });
+// Initialize storage
+export const storage = new StorageWrapper();
 
-    // Test MMKV to verify it's working
-    console.log("🔥 MMKV Storage Initialized Successfully!");
-    mmkvInstance.set("mmkv_test_key", "MMKV is working!");
-    const testValue = mmkvInstance.getString("mmkv_test_key");
-    console.log("✅ MMKV Test Read:", testValue);
-    mmkvInstance.delete("mmkv_test_key");
-    console.log("🗑️ MMKV Test Cleanup Complete");
-
-    return mmkvInstance;
-  } catch (e) {
-    console.warn(
-      "MMKV unavailable, falling back to in-memory storage. Cause:",
-      e
-    );
-    return new MemoryStorage();
-  }
-})();
+// Initialize the storage on module load
+storage.init();
 
 // Storage Keys
 const KEYS = {

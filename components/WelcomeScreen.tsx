@@ -22,12 +22,11 @@ export default function WelcomeScreen({ onGetStarted }: WelcomeScreenProps) {
           {/* Logo and Title Section */}
           <View className="items-center mt-12">
             {/* Official Logo */}
-            <View className="mb-8">
+            <View className="mb-8 bg-primary rounded-full">
               <Image
                 source={require("../assets/images/icon.png")}
-                style={{ width: 128, height: 128 }}
+                style={{ width: 130, height: 130 }}
                 resizeMode="contain"
-                className="rounded-full"
               />
             </View>
 

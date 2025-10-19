@@ -110,7 +110,7 @@ Choose one of three methods:
 - **Styling:** TailwindCSS (NativeWind)
 - **AI:** Google Gemini AI
 - **Navigation:** Expo Router
-- **Storage:** React Native MMKV
+- **Storage:** AsyncStorage
 - **Image Handling:** Expo Image Picker & Camera
 
 ---
