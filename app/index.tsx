@@ -310,11 +310,9 @@ export default function Index() {
         {/* Header */}
         <View className="mb-8 mt-4">
           <Text className="text-4xl font-black text-foreground mb-2">
-            Analyze your food
+            Hi! I am Dewy :)
           </Text>
-          <Text className="text-base text-muted-foreground font-medium">
-            AI-powered nutrition insights in seconds
-          </Text>
+          <Text className="text-base text-muted-foreground font-medium"></Text>
         </View>
 
         {/* Main Content Area */}
