@@ -32,61 +32,61 @@ export default function WelcomeScreen({ onGetStarted }: WelcomeScreenProps) {
 
             {/* App Title */}
             <Text className="text-5xl font-black text-foreground tracking-tight mb-3">
-              Foodlens
+              Dewy
             </Text>
 
             {/* Tagline */}
             <Text className="text-xl text-foreground text-center font-semibold mb-1">
-              Snap your meal.
+              Eat for the skin
             </Text>
             <Text className="text-xl text-muted-foreground text-center font-semibold">
-              Know what you eat.
+              you want tomorrow.
             </Text>
           </View>
 
           {/* Feature Cards */}
           <View className="gap-3 w-full mt-12">
-            {/* AI Feature */}
+            {/* Scan Feature */}
             <View className="bg-card flex-row items-center rounded-2xl px-5 py-5 shadow-sm border border-border-light">
-              <View className="bg-primary/10 rounded-full w-14 h-14 items-center justify-center mr-4">
-                <Ionicons name="sparkles" size={26} color="#2e7d32" />
+              <View className="bg-accent rounded-full w-14 h-14 items-center justify-center mr-4">
+                <Ionicons name="camera" size={26} color="#a3431f" />
               </View>
               <View className="flex-1">
                 <Text className="text-base font-bold text-foreground mb-1">
-                  AI-Powered Analysis
+                  Scan any meal
                 </Text>
                 <Text className="text-sm text-muted-foreground font-medium">
-                  Instant nutrition insights
+                  Macros and micros, instantly
                 </Text>
               </View>
             </View>
 
             {/* Breakdown Feature */}
             <View className="bg-card flex-row items-center rounded-2xl px-5 py-5 shadow-sm border border-border-light">
-              <View className="bg-primary/10 rounded-full w-14 h-14 items-center justify-center mr-4">
-                <Ionicons name="stats-chart" size={26} color="#2e7d32" />
+              <View className="bg-secondary rounded-full w-14 h-14 items-center justify-center mr-4">
+                <Ionicons name="stats-chart" size={26} color="#8c2e44" />
               </View>
               <View className="flex-1">
                 <Text className="text-base font-bold text-foreground mb-1">
-                  Detailed Breakdown
+                  See what's missing
                 </Text>
                 <Text className="text-sm text-muted-foreground font-medium">
-                  Calories, macros & more
+                  Nutrients that support skin and hair
                 </Text>
               </View>
             </View>
 
-            {/* Health Score Feature */}
+            {/* Glow Score Feature */}
             <View className="bg-card flex-row items-center rounded-2xl px-5 py-5 shadow-sm border border-border-light">
               <View className="bg-primary/10 rounded-full w-14 h-14 items-center justify-center mr-4">
-                <Ionicons name="heart" size={26} color="#2e7d32" />
+                <Ionicons name="sparkles" size={26} color="#b34a5c" />
               </View>
               <View className="flex-1">
                 <Text className="text-base font-bold text-foreground mb-1">
-                  Health Score
+                  Glow score
                 </Text>
                 <Text className="text-sm text-muted-foreground font-medium">
-                  Track your wellness
+                  Get ahead of deficits before they show
                 </Text>
               </View>
             </View>
@@ -101,13 +101,13 @@ export default function WelcomeScreen({ onGetStarted }: WelcomeScreenProps) {
               activeOpacity={0.8}
             >
               <Text className="text-primary-foreground font-black text-xl tracking-wide">
-                Get Started
+                Start your glow profile
               </Text>
             </TouchableOpacity>
 
             {/* Info text */}
             <Text className="text-sm text-muted-foreground font-medium text-center px-6">
-              Powered by Google Gemini AI
+              Not a substitute for medical or dermatological advice
             </Text>
           </View>
         </View>

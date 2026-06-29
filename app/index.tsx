@@ -21,13 +21,13 @@ import {
 } from "../services/foodAnalyzer";
 import { FoodAnalysisResponse } from "../types/food";
 import {
+  ScanHistoryItem,
   addScanToHistory,
   getApiKey,
   getRemainingScans,
   hasReachedUsageLimit,
   incrementUsageCount,
   isOnboardingCompleted,
-  ScanHistoryItem,
   setOnboardingCompleted,
 } from "../utils/storage";
 
@@ -354,7 +354,7 @@ export default function Index() {
             {/* Info Cards */}
             <View className="gap-3">
               {/* AI Feature */}
-              <View className="bg-card flex-row items-center rounded-2xl px-5 py-4 shadow-sm border border-border-light">
+              {/* <View className="bg-card flex-row items-center rounded-2xl px-5 py-4 shadow-sm border border-border-light">
                 <View className="bg-primary/10 rounded-full w-12 h-12 items-center justify-center mr-4">
                   <Ionicons name="sparkles" size={24} color="#2e7d32" />
                 </View>
@@ -366,10 +366,10 @@ export default function Index() {
                     Instant nutrition insights
                   </Text>
                 </View>
-              </View>
+              </View> */}
 
               {/* Breakdown Feature */}
-              <View className="bg-card flex-row items-center rounded-2xl px-5 py-4 shadow-sm border border-border-light">
+              {/* <View className="bg-card flex-row items-center rounded-2xl px-5 py-4 shadow-sm border border-border-light">
                 <View className="bg-primary/10 rounded-full w-12 h-12 items-center justify-center mr-4">
                   <Ionicons name="stats-chart" size={24} color="#2e7d32" />
                 </View>
@@ -381,9 +381,8 @@ export default function Index() {
                     Calories, macros & more
                   </Text>
                 </View>
-              </View>
-
-              {/* Health Score Feature */}
+              </View> */}
+              {/* 
               <View className="bg-card flex-row items-center rounded-2xl px-5 py-4 shadow-sm border border-border-light">
                 <View className="bg-primary/10 rounded-full w-12 h-12 items-center justify-center mr-4">
                   <Ionicons name="heart" size={24} color="#2e7d32" />
@@ -396,7 +395,7 @@ export default function Index() {
                     Track your wellness
                   </Text>
                 </View>
-              </View>
+              </View> */}
             </View>
           </View>
         ) : (

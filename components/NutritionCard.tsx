@@ -100,7 +100,7 @@ export default function NutritionCard({ analysis }: NutritionCardProps) {
       {/* Nutrition Facts with modern card design */}
       <View className="mb-6">
         <Text className="text-2xl font-extrabold text-foreground mb-4 flex-row items-center font-sans">
-          📊 Nutrition Facts
+          Nutrition Facts
         </Text>
         <View className="bg-card rounded-2xl p-4 shadow-xl border border-border-light">
           <NutrientRow
